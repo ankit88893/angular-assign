@@ -1,0 +1,54 @@
+<h1>customer-list works!</h1>
+
+<table >
+    <tr>
+        <th>Id</th>
+        <th>customer name</th>
+        <th>balance</th>
+        <th>Delete</th>
+    </tr>
+
+    <tr *ngFor= "let customer of customers">
+    <td>{{customer.id}}</td>
+    <td>{{customer.name}}</td>
+    <td>{{customer.balance}}</td>
+    <td>
+        <button (click)="removeCustomer(customer.id)">Remove</button>
+    </td>  
+    </tr>   
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<h1>Customer list<h1>
+
+<div *ngFor="let customer of customers; let i=index">
+
+  {{i+1}}) Name is {{customer.customername | uppercase}}
+  <br>
+   Balance is {{customer.balance |uppercase}}
+   <br>
+  
+  Id is {{customer.id}}
+  <br>
+   <button (click)="removeCustomer(customer.id)">Remove Customer</button> 
+  
+  
+  
+  </div>
+  <br> -->

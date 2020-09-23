@@ -1,0 +1,30 @@
+<p>codedriven works!</p>
+
+<form [formGroup]="customerForm" (ngSubmit)="customerForm.valid && addCustomer()" >    
+   
+       <div>
+       <label>Name</label>
+       <input type="text" formControlName="name">
+       </div>
+   
+       <div *ngIf="nameCtrl.errors!==null && nameCtrl.errors.required">
+           name is required
+       </div>
+       <div>
+           <label>Balance</label>
+           <input type="number"  formControlName="balance">    
+       </div>
+   
+       <div *ngIf="balanceCtrl.errors!=null && balanceCtrl.errors.required" class="error">
+          balance is required
+       </div>
+       
+       <input type="submit" value="Submit">
+   </form>
+   
+   <div *ngIf="customer!==undefined">
+       <h3>Added Customer </h3>   
+       Id is  {{customer.id}}
+     Name is {{customer.name}}
+      Balance is {{customer.balance}}
+      </div>
